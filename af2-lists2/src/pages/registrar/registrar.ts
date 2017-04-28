@@ -1,28 +1,28 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { AuthService } from '../../providers/auth-service';
 import { NavController, AlertController, NavParams, LoadingController } from 'ionic-angular';
+import { AuthService } from '../../providers/auth-service';
 
-import { RegistrarPage } from './../registrar/registrar';
-import { ResetsenhaPage } from './../resetsenha/resetsenha';
 import { HomePage } from './../home/home';
 
 @Component({
-  selector: 'page-login',
-  templateUrl: 'login.html'
+  selector: 'page-registrar',
+  templateUrl: 'registrar.html'
 })
-export class LoginPage {
+export class RegistrarPage {
 
-  public loginForm;
+  public registerForm;
   emailChanged: boolean = false;
   passwordChanged: boolean = false;
+  fullnameChanged: boolean = false;
   submitAttempt: boolean = false;
   loading: any;
 
   constructor(public navCtrl: NavController, public authService: AuthService, public navParams: NavParams, public formBuilder: FormBuilder,public alertCtrl: AlertController, public loadingCtrl: LoadingController) {
     let EMAIL_REGEXP = /^[a-z0-9!#$%&'*+\/=?^_`{|}~.-]+@[a-z0-9]([a-z0-9-]*[a-z0-9])?(\.[a-z0-9]([a-z0-9-]*[a-z0-9])?)*$/i;
-    this.loginForm = formBuilder.group({
+    this.registerForm = formBuilder.group({
       email: ['', Validators.compose([Validators.required, Validators.pattern(EMAIL_REGEXP)])],
+      fullname: ['', Validators.compose([ Validators.required])],
       password: ['', Validators.compose([Validators.minLength(6), Validators.required])]
     });
   }
@@ -32,22 +32,15 @@ export class LoginPage {
     this[field + "Changed"] = true;
   }
 
-  register(){
-    this.navCtrl.push(RegistrarPage);
-  }
-
-  resetPwd(){
-    this.navCtrl.push(ResetsenhaPage);
-  }
-
-  loginUser(){
+  doRegister(){
     this.submitAttempt = true;
 
-    if (!this.loginForm.valid){
-      console.log(this.loginForm.value);
+    if (!this.registerForm.valid){
+      console.log(this.registerForm.value);
     } else {
-      this.authService.doLogin(this.loginForm.value.email, this.loginForm.value.password).then( authService => {
+      this.authService.register(this.registerForm.value.email, this.registerForm.value.password).then( authService => {
         this.navCtrl.setRoot(HomePage);
+        console.log("Criado com Sucesso");
       }, error => {
         this.loading.dismiss().then( () => {
           let alert = this.alertCtrl.create({
@@ -63,10 +56,10 @@ export class LoginPage {
         });
       });
 
-      this.loading = this.loadingCtrl.create({
+      /*this.loading = this.loadingCtrl.create({
         dismissOnPageChange: true,
       });
-      this.loading.present();
+      this.loading.present();*/
     }
   }
 

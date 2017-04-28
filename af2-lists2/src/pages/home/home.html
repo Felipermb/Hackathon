@@ -17,5 +17,9 @@
       {{musica.titulo}}
     </ion-item>
   </ion-list>
-  <button ion-button (click)="login()">Login</button>
+  <ion-buttons end>
+    <button ion-button color="primary" (click)="logout()">
+    <ion-icon ios="ios-exit" md="md-exit"></ion-icon>
+  </button>
+  </ion-buttons>
 </ion-content>

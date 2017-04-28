@@ -2,11 +2,14 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import firebase from 'firebase';
+// import * as firebase from 'firebase';
 
 //Meus importes
 import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
 import { AuthService } from '../providers/auth-service';
+import { RegistrarPage } from '../pages/registrar/registrar';
+import { ResetsenhaPage } from '../pages/resetsenha/resetsenha';
 
 // Import the AF2 Module
 import { AngularFireModule, AuthProviders, AuthMethods } from 'angularfire2';
@@ -32,7 +35,9 @@ firebase.initializeApp(firebaseConfig);
   declarations: [
     MyApp,
     HomePage,
-    LoginPage
+    LoginPage,
+    RegistrarPage,
+    ResetsenhaPage
   ],
   imports: [
     IonicModule.forRoot(MyApp),
@@ -42,7 +47,9 @@ firebase.initializeApp(firebaseConfig);
   entryComponents: [
     MyApp,
     HomePage,
-    LoginPage
+    LoginPage,
+    RegistrarPage,
+    ResetsenhaPage
   ],
   providers: [
     {provide: ErrorHandler, useClass: IonicErrorHandler}, 

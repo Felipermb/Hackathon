@@ -1,8 +1,10 @@
 //importes de componente exerto
-import {AngularFire, FirebaseListObservable} from 'angularfire2';
-import { Component } from '@angular/core';
 import { NavController, AlertController, ActionSheetController } from 'ionic-angular';
+import { AngularFire } from 'angularfire2';
+import { Component } from '@angular/core';
+import firebase from 'firebase';
 
+import { AuthService } from '../../providers/auth-service';
 import { LoginPage } from './../login/login';
 
 @Component({
@@ -11,19 +13,24 @@ import { LoginPage } from './../login/login';
 })
 export class HomePage {
 
-  musicas: FirebaseListObservable<any>;
+  //musicas: FirebaseListObservable<any>;
 
-  constructor(public navCtrl: NavController, public alertCtrl: AlertController, af: AngularFire, public actionSheetCtrl: ActionSheetController) {
-      //Acessando Banco de Dados
-      console.log(af.database.list('/musicas'));
-      this.musicas = af.database.list('/musicas');
+  constructor(public navCtrl: NavController, public authService: AuthService, public alertCtrl: AlertController, af: AngularFire, public actionSheetCtrl: ActionSheetController) {
+    //Acessando Banco de Dados
+    //console.log(af.database.list('/musicas'));
+    //this.musicas = af.database.list('/musicas');
+    firebase.auth().onAuthStateChanged(function (user) {
+      if (!user) {
+        navCtrl.setRoot(LoginPage);
+      }
+    });
   }
 
-  login(){
-    this.navCtrl.push(LoginPage);
+  logout() {
+    this.authService.doLogout();
   }
 
-  mostrarOpcoes(musicaId, musicaTitulo){
+  /*mostrarOpcoes(musicaId, musicaTitulo){
     let actionSheet = this.actionSheetCtrl.create({
       title: 'O que você quer fazer?',
       buttons: [
@@ -113,5 +120,5 @@ export class HomePage {
         ]
       });
       prompt.present();
-  }
+  }*/
 }
