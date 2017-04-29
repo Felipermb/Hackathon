@@ -6,6 +6,7 @@ import { HttpModule } from '@angular/http';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
+import { DescricaoEnergia } from '../pages/descricao-energia/descricao-energia';
 
 import { FlashCard } from '../components/flash-card/flash-card';
 import { Data } from '../providers/data';
@@ -31,7 +32,8 @@ export const firebaseConfig = {
     MyApp,
     HomePage,
     ListPage,
-    FlashCard
+    FlashCard,
+    DescricaoEnergia
   ],
   imports: [
     BrowserModule,
@@ -43,7 +45,8 @@ export const firebaseConfig = {
   entryComponents: [
     MyApp,
     HomePage,
-    ListPage
+    ListPage,
+    DescricaoEnergia
   ],
   providers: [
     StatusBar,
