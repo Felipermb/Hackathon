@@ -18,7 +18,7 @@
             "flashCardFront": "<img src='assets/img/sol.png' />",
             "flashCardBack": "Plane",
             "flashCardFlipped": false,
-            "questionText": "Sua região é quente?",
+            "questionText": "Onde você mora é bem quente?",
             "answers": [
                 {"answer": "Sim", "correct": "0", "selected": false},
                 {"answer": "Não", "correct": "1", "selected": false}
