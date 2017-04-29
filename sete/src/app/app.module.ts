@@ -7,6 +7,7 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { DescricaoEnergia } from '../pages/descricao-energia/descricao-energia';
+import { Resposta } from '../pages/resposta/resposta';
 
 import { FlashCard } from '../components/flash-card/flash-card';
 import { Data } from '../providers/data';
@@ -33,7 +34,8 @@ export const firebaseConfig = {
     HomePage,
     ListPage,
     FlashCard,
-    DescricaoEnergia
+    DescricaoEnergia,
+    Resposta
   ],
   imports: [
     BrowserModule,
@@ -46,7 +48,8 @@ export const firebaseConfig = {
     MyApp,
     HomePage,
     ListPage,
-    DescricaoEnergia
+    DescricaoEnergia,
+    Resposta
   ],
   providers: [
     StatusBar,

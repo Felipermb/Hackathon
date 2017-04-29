@@ -5,9 +5,9 @@
     </ion-toolbar>
   </ion-header>
 
-  <ion-content>
-    <ion-list>
-      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+  <ion-content style="background-image: url(../../assets/img/papelAmassado.jpg);">
+    <ion-list style="opacity: 0.7" >
+      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)" style="text-decoration-color: #000000 ">
         {{p.title}}
       </button>
     </ion-list>
