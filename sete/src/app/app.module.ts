@@ -8,6 +8,7 @@ import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { DescricaoEnergia } from '../pages/descricao-energia/descricao-energia';
 import { Resposta } from '../pages/resposta/resposta';
+import { Links } from '../pages/links/links';
 
 import { FlashCard } from '../components/flash-card/flash-card';
 import { Data } from '../providers/data';
@@ -35,7 +36,8 @@ export const firebaseConfig = {
     ListPage,
     FlashCard,
     DescricaoEnergia,
-    Resposta
+    Resposta,
+    Links
   ],
   imports: [
     BrowserModule,
@@ -49,7 +51,8 @@ export const firebaseConfig = {
     HomePage,
     ListPage,
     DescricaoEnergia,
-    Resposta
+    Resposta,
+    Links
   ],
   providers: [
     StatusBar,
