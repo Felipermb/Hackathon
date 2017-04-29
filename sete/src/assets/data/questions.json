@@ -1,0 +1,39 @@
+{
+    "questions": [
+ 
+        {
+            "flashCardFront": "<img src='assets/img/brasil.png' />",
+            "flashCardBack": "Helicopter",
+            "flashCardFlipped": false,
+            "questionText": "Qual sua região?",
+            "answers": [
+                {"answer": "Centro-Oeste", "correct": 0, "selected": false},
+                {"answer": "Nordeste", "correct": "1", "selected": false},
+                {"answer": "Norte", "correct": "2", "selected": false},
+                {"answer": "Sul", "correct": "3", "selected": false},
+                {"answer": "Sudeste", "correct": "4", "selected": false}
+            ]
+        },
+        {
+            "flashCardFront": "<img src='assets/img/sol.png' />",
+            "flashCardBack": "Plane",
+            "flashCardFlipped": false,
+            "questionText": "Sua região é quente?",
+            "answers": [
+                {"answer": "Sim", "correct": "0", "selected": false},
+                {"answer": "Não", "correct": "1", "selected": false}
+            ]
+        },
+        {
+            "flashCardFront": "<img src='assets/img/vento.png' />",
+            "flashCardBack": "Truck",
+            "flashCardFlipped": false,
+            "questionText": "Onde você mora é bem ventilado?",
+            "answers": [
+                {"answer": "Sim", "correct": "0", "selected": false},
+                {"answer": "Não", "correct": "1", "selected": false}
+            ]
+        }
+ 
+    ]
+}
