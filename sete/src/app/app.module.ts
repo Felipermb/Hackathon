@@ -12,6 +12,7 @@ import { Links } from '../pages/links/links';
 
 import { FlashCard } from '../components/flash-card/flash-card';
 import { Data } from '../providers/data';
+import { resposta } from '../providers/resposta';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -58,7 +59,8 @@ export const firebaseConfig = {
     StatusBar,
     SplashScreen,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
-    Data
+    Data,
+    resposta
   ]
 })
 export class AppModule { }

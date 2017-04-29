@@ -22,13 +22,15 @@ import { DescricaoEnergia } from '../descricao-energia/descricao-energia';
  	videos: any;
  	custo: any
  	curtoPrazo: any;
+	titulo: any;
  	enderecoImage: any;
 
  	constructor(public navCtrl: NavController, public navParams: NavParams, af: AngularFire) {
- 		// this.tipoEnergia = 
-
- 		switch (navParams.data.item) {
- 			case "Energia Éolica":
+ 		this.tipoEnergia = navParams.data.item;
+		console.log(this.tipoEnergia);
+		this.titulo = this.tipoEnergia;
+ 		switch (this.tipoEnergia) {
+ 			case "Energia Eólica":
  			console.log("entrou")
  			this.tipoEnergia = af.database.object('tipoEnergia/eolica', { preserveSnapshot: true});
  			this.tipoEnergia.subscribe(snapshot => {
@@ -57,7 +59,7 @@ import { DescricaoEnergia } from '../descricao-energia/descricao-energia';
  				this.enderecoImage = snapshot.val().imagem;
  			});
  			break;
- 			case "Energia Hidréletrica":
+ 			case "Energia Hidrelétrica":
  			this.tipoEnergia = af.database.object('tipoEnergia/hidreletrica', { preserveSnapshot: true});
  			this.tipoEnergia.subscribe(snapshot => {
  				console.log(snapshot.val().descricao + " -- "+ snapshot.val().imagem);
@@ -84,14 +86,14 @@ import { DescricaoEnergia } from '../descricao-energia/descricao-energia';
  	itemTapped() {
  		// That's right, we're pushing to ourselves!
  		this.navCtrl.push(Links, {
- 			item: this.tipoEnergia
+ 			item: this.titulo
  		});
  	}
 
  	descricaoPage() {
  		// That's right, we're pushing to ourselves!
  		this.navCtrl.push(DescricaoEnergia, {
- 			 item: this.tipoEnergia
+ 			 item: this.titulo
  		});
  	}
 

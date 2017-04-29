@@ -161,8 +161,10 @@ export class HomePage {
           }
         }
         this.restartQuiz();
-        this.res = new resposta(this.resultado);
-        this.navCtrl.setRoot(Resposta);
+        //this.res.setResposta(this.resultado);
+        this.navCtrl.setRoot(Resposta, {
+          item: this.resultado
+        });
         break;
     }
     this.score++;

@@ -21,7 +21,7 @@ export class ListPage {
     this.icons = ['flask', 'wifi', 'beer', 'football', 'basketball', 'paper-plane',
     'american-football', 'boat', 'bluetooth', 'build'];
 
-    this.listaEnergias = ["Energia Éolica", "Energia Solar", "Energia Maremotriz", "Energia Geotermica", "Energia Hidréletrica", "Energia Nuclear"];
+    this.listaEnergias = ["Energia Eólica", "Energia Solar", "Energia Maremotriz", "Energia Geotermica", "Energia Hidrelétrica", "Energia Nuclear"];
   }
 
   itemTapped(event, item) {

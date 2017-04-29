@@ -25,7 +25,7 @@ import {AngularFire, FirebaseObjectObservable, FirebaseListObservable} from 'ang
  		console.log("Item: "+navParams.data.item);
  		this.item = navParams.data.item;
  		switch (navParams.data.item) {
- 			case "Energia Éolica":
+ 			case "Energia Eólica":
  			console.log("entrou")
  			this.tipoEnergia = af.database.list('tipoEnergia/eolica/linksYoutube');
  			
@@ -42,7 +42,7 @@ import {AngularFire, FirebaseObjectObservable, FirebaseListObservable} from 'ang
  			this.tipoEnergia = af.database.list('tipoEnergia/geotermica/linksYoutube');
  			
  			break;
- 			case "Energia Hidréletrica":
+ 			case "Energia Hidrelétrica":
  			this.tipoEnergia = af.database.list('tipoEnergia/hidreletrica/linksYoutube');
  			
  			break;

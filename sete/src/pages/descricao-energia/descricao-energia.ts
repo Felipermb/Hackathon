@@ -20,14 +20,14 @@ import {AngularFire, FirebaseObjectObservable} from 'angularfire2';
  		
  		console.log("Item: "+navParams.data.item);
  		this.item = navParams.data.item;
- 		switch (navParams.data.item) {
- 			case "Energia Éolica":
+ 		switch (this.item) {
+ 			case "Energia Eólica":
  			//console.log("entrou")
  			this.tipoEnergia = af.database.object('tipoEnergia/eolica', { preserveSnapshot: true});
  			this.tipoEnergia.subscribe(snapshot => {
  				//console.log(snapshot.val().descricao + " -- "+ snapshot.val().imagem);
  				this.descricao = snapshot.val().descricao;
-				this.titulo = "Energia Éolica";
+				this.titulo = "Energia Eólica";
  				this.enderecoImage = snapshot.val().imagem;
  			});
  			break;
@@ -37,7 +37,7 @@ import {AngularFire, FirebaseObjectObservable} from 'angularfire2';
  				//console.log(snapshot.val().descricao + " -- "+ snapshot.val().imagem);
  				this.descricao = snapshot.val().descricao;
  				this.enderecoImage = snapshot.val().imagem;
-				 this.titulo = "Energia Éolica";
+				 this.titulo = "Energia Solar";
  			});
  			break;
  			case "Energia Maremotriz":
@@ -58,13 +58,13 @@ import {AngularFire, FirebaseObjectObservable} from 'angularfire2';
 				 this.titulo = "Energia Geotermica";
  			});
  			break;
- 			case "Energia Hidréletrica":
+ 			case "Energia Hidrelétrica":
  			this.tipoEnergia = af.database.object('tipoEnergia/hidreletrica', { preserveSnapshot: true});
  			this.tipoEnergia.subscribe(snapshot => {
  				//console.log(snapshot.val().descricao + " -- "+ snapshot.val().imagem);
  				this.descricao = snapshot.val().descricao;
  				this.enderecoImage = snapshot.val().imagem;
-				 this.titulo = "Energia Hidréletrica";
+				 this.titulo = "Energia Hidrelétrica";
  			});
  			break;
  			case "Energia Nuclear":
