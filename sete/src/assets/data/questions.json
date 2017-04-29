@@ -3,20 +3,19 @@
  
         {
             "flashCardFront": "<img src='assets/img/brasil.png' />",
-            "flashCardBack": "Helicopter",
+            "flashCardBack": "Muito Bem!",
             "flashCardFlipped": false,
             "questionText": "Qual sua região?",
             "answers": [
-                {"answer": "Centro-Oeste", "correct": 0, "selected": false},
-                {"answer": "Nordeste", "correct": "1", "selected": false},
-                {"answer": "Norte", "correct": "2", "selected": false},
+                {"answer": "Centro-Oeste", "correct": "0", "selected": false},
+                {"answer": "Nordeste/Norte", "correct": "1", "selected": false},
                 {"answer": "Sul", "correct": "3", "selected": false},
                 {"answer": "Sudeste", "correct": "4", "selected": false}
             ]
         },
         {
             "flashCardFront": "<img src='assets/img/sol.png' />",
-            "flashCardBack": "Plane",
+            "flashCardBack": "Que interessante :D",
             "flashCardFlipped": false,
             "questionText": "Onde você mora é bem quente?",
             "answers": [
@@ -26,9 +25,72 @@
         },
         {
             "flashCardFront": "<img src='assets/img/vento.png' />",
-            "flashCardBack": "Truck",
+            "flashCardBack": "Estamos indo bem...",
             "flashCardFlipped": false,
             "questionText": "Onde você mora é bem ventilado?",
+            "answers": [
+                {"answer": "Sim", "correct": "0", "selected": false},
+                {"answer": "Não", "correct": "1", "selected": false}
+            ]
+        },
+        {
+            "flashCardFront": "<img src='assets/img/aguacorrente.png' />",
+            "flashCardBack": "Só mais um pouco!",
+            "flashCardFlipped": false,
+            "questionText": "Você possui acesso a água corrente? (Ex: Corregos, Riachos)",
+            "answers": [
+                {"answer": "Sim", "correct": "0", "selected": false},
+                {"answer": "Não", "correct": "1", "selected": false}
+            ]
+        },
+        {
+            "flashCardFront": "<img src='assets/img/tempestade.png' />",
+            "flashCardBack": "Interessante...",
+            "flashCardFlipped": false,
+            "questionText": "Sua região é chuvosa?",
+            "answers": [
+                {"answer": "Sim", "correct": "0", "selected": false},
+                {"answer": "Não", "correct": "1", "selected": false}
+            ]
+        },
+        {
+            "flashCardFront": "<img src='assets/img/casa.png' />",
+            "flashCardBack": "Estamos quase lá :D",
+            "flashCardFlipped": false,
+            "questionText": "Qual seu tipo de residência?",
+            "answers": [
+                {"answer": "Prédio", "correct": "0", "selected": false},
+                {"answer": "Casa", "correct": "1", "selected": false},
+                {"answer": "Outro", "correct": "1", "selected": false}
+            ]
+        },
+        {
+            "flashCardFront": "<img src='assets/img/espaco.png' />",
+            "flashCardBack": "Que legal!",
+            "flashCardFlipped": false,
+            "questionText": "Onde você mora possui espaço externo? (Ex: quintal, pátio)",
+            "answers": [
+                {"answer": "Sim", "correct": "0", "selected": false},
+                {"answer": "Não", "correct": "1", "selected": false}
+            ]
+            
+        },
+        {
+            "flashCardFront": "<img src='assets/img/energia.png' />",
+            "flashCardBack": "Quase acabando.",
+            "flashCardFlipped": false,
+            "questionText": "Como você avalia seu consumo de energia diário?",
+            "answers": [
+                {"answer": "Baixo", "correct": "0", "selected": false},
+                {"answer": "Médio", "correct": "1", "selected": false},
+                {"answer": "Alto", "correct": "1", "selected": false}
+            ]
+        },
+        {
+            "flashCardFront": "<img src='assets/img/limpa.png' />",
+            "flashCardBack": "FIM :D",
+            "flashCardFlipped": false,
+            "questionText": "Já pensou em utilizar energia renovável em sua residência?",
             "answers": [
                 {"answer": "Sim", "correct": "0", "selected": false},
                 {"answer": "Não", "correct": "1", "selected": false}

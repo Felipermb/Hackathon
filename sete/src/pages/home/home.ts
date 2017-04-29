@@ -24,8 +24,6 @@ export class HomePage {
 
   questions: any;
 
-
-
   constructor(public navCtrl: NavController, public platform: Platform, af: AngularFire, public dataService: Data) {
     /*platform.ready().then(() => {
       this.loadMap();
@@ -53,6 +51,12 @@ export class HomePage {
   regiao: string;
   ensolarado: string;
   ventilado: string;
+  aguacorrente: string;
+  casa: string;
+  energia: string;
+  espaco: string;
+  limpa: string;
+  tempestade: string;
 
   selectAnswer(answers, question) {
     this.hasAnswered = true;
@@ -61,8 +65,6 @@ export class HomePage {
     //if (answer.correct) {
     switch (this.score) {
       case 0:
-        console.log(answers.answer);
-        //if(question.selected) console.log("entrou");
         this.regiao = answers.answer;
         break;
       case 1:
@@ -70,6 +72,24 @@ export class HomePage {
         break;
       case 2:
         this.ventilado = answers.answer;
+        break;
+      case 3:
+        this.aguacorrente = answers.answer;
+        break;
+      case 4:
+        this.tempestade = answers.answer;
+        break;
+      case 5:
+        this.casa = answers.answer;
+        break;
+      case 6:
+        this.espaco = answers.answer;
+        break;
+      case 7:
+        this.energia = answers.answer;
+        break;
+      case 8:
+        this.limpa = answers.answer;
         break;
     }
     this.score++;
