@@ -22,15 +22,6 @@ export class ListPage {
     'american-football', 'boat', 'bluetooth', 'build'];
 
     this.listaEnergias = ["Energia Éolica", "Energia Solar", "Energia Maremotriz", "Energia Geotermica", "Energia Hidréletrica", "Energia Nuclear"];
-
-    this.items = [];
-    for (let i = 1; i < 11; i++) {
-      this.items.push({
-        title: 'Item ' + i,
-        note: 'This is item #' + i,
-        icon: this.icons[Math.floor(Math.random() * this.icons.length)]
-      });
-    }
   }
 
   itemTapped(event, item) {
@@ -39,4 +30,5 @@ export class ListPage {
       item: item
     });
   }
+
 }

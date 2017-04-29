@@ -9,8 +9,8 @@
             "answers": [
                 {"answer": "Centro-Oeste", "correct": "0", "selected": false},
                 {"answer": "Nordeste/Norte", "correct": "1", "selected": false},
-                {"answer": "Sul", "correct": "3", "selected": false},
-                {"answer": "Sudeste", "correct": "4", "selected": false}
+                {"answer": "Sul", "correct": "2", "selected": false},
+                {"answer": "Sudeste", "correct": "3", "selected": false}
             ]
         },
         {
@@ -61,7 +61,7 @@
             "answers": [
                 {"answer": "Prédio", "correct": "0", "selected": false},
                 {"answer": "Casa", "correct": "1", "selected": false},
-                {"answer": "Outro", "correct": "1", "selected": false}
+                {"answer": "Outro", "correct": "2", "selected": false}
             ]
         },
         {
@@ -83,7 +83,7 @@
             "answers": [
                 {"answer": "Baixo", "correct": "0", "selected": false},
                 {"answer": "Médio", "correct": "1", "selected": false},
-                {"answer": "Alto", "correct": "1", "selected": false}
+                {"answer": "Alto", "correct": "2", "selected": false}
             ]
         },
         {

@@ -14,11 +14,29 @@
 
 
 <ion-content padding>
-	<div style="width: 100%; height: 30%; ">
+	<!--<div style="width: 100%; height: 30%; ">
 		<img style="width: 100%; height: 100%;" src="{{ enderecoImage }}" />
 	</div>
-	<div style="text-align: justify; margin-top: 10px" >
-		<label  escape="false">{{ descricao }}</label>
-		
-	</div>
+	<div style="text-align: justify; margin-top: 10px">
+		<label escape="false">{{ descricao }}</label>
+	</div>-->
+
+	<ion-card *ngIf="titulo">
+		<img src="{{ enderecoImage }}" />
+		<ion-card-content>
+			<ion-card-title>
+				{{ titulo }}
+			</ion-card-title>
+			<p>
+				{{ descricao }}
+			</p>
+		</ion-card-content>
+	</ion-card>
+	<ion-card *ngIf="!titulo">
+		<ion-card-content>
+			<ion-card-title>
+				Carregando...
+			</ion-card-title>
+		</ion-card-content>
+	</ion-card>
 </ion-content>

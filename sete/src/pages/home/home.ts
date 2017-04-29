@@ -2,6 +2,9 @@ import { Component, ViewChild, ElementRef } from '@angular/core';
 import { NavController, AlertController, ActionSheetController, Platform } from 'ionic-angular';
 import { AngularFire } from 'angularfire2';
 import { Data } from '../../providers/data';
+import { Resposta } from './../resposta/resposta';
+
+import { resposta } from './../../providers/resposta';
 
 declare var google;
 
@@ -23,8 +26,11 @@ export class HomePage {
   score: number = 0;
 
   questions: any;
+  eolica: number = 0;
+  solar: number = 0;
+  hidreletrica: number = 0;
 
-  constructor(public navCtrl: NavController, public platform: Platform, af: AngularFire, public dataService: Data) {
+  constructor(public res: resposta, public navCtrl: NavController, public platform: Platform, af: AngularFire, public dataService: Data) {
     /*platform.ready().then(() => {
       this.loadMap();
     });*/
@@ -57,6 +63,7 @@ export class HomePage {
   espaco: string;
   limpa: string;
   tempestade: string;
+  resultado: string;
 
   selectAnswer(answers, question) {
     this.hasAnswered = true;
@@ -66,30 +73,96 @@ export class HomePage {
     switch (this.score) {
       case 0:
         this.regiao = answers.answer;
+        switch (this.regiao) {
+          case 'Centro-Oeste':
+            this.eolica++;
+            break;
+          case 'Nordeste/Norte':
+            this.solar++;
+            this.hidreletrica++;
+            break;
+          case 'Sul':
+            this.eolica++;
+            break;
+          case 'Sudeste':
+            this.eolica++;
+            this.solar++;
+            break;
+        }
         break;
       case 1:
         this.ensolarado = answers.answer;
+        switch (this.ensolarado) {
+          case "Sim":
+            this.solar++;
+            break;
+        }
         break;
       case 2:
         this.ventilado = answers.answer;
+        switch (this.ventilado) {
+          case "Sim":
+            this.eolica++;
+            break;
+        }
         break;
       case 3:
         this.aguacorrente = answers.answer;
+        switch (this.aguacorrente) {
+          case "Sim":
+            this.hidreletrica++;
+            break;
+        }
         break;
       case 4:
         this.tempestade = answers.answer;
+        switch (this.tempestade) {
+          case "Sim":
+            this.hidreletrica++;
+            break;
+        }
         break;
       case 5:
         this.casa = answers.answer;
+        switch (this.casa) {
+          case "Prédio":
+            this.solar--;
+            break;
+          case "Casa":
+            this.solar++;
+            this.eolica++;
+            break;
+        }
         break;
       case 6:
         this.espaco = answers.answer;
+        switch (this.espaco) {
+          case "Sim":
+            this.eolica++;
+            this.solar++;
+            break;
+          case "Não":
+            this.hidreletrica--;
+            break;
+        }
         break;
       case 7:
         this.energia = answers.answer;
         break;
       case 8:
         this.limpa = answers.answer;
+        if(this.eolica >= this.solar && this.eolica >= this.hidreletrica){
+          this.resultado = "Energia Eólica";
+        }else{
+          if(this.solar >= this.eolica && this.solar >= this.hidreletrica){
+            this.resultado = "Energia Solar";
+          }else{
+            this.resultado = "Energia Hidrelétrica";
+          }
+        }
+        this.restartQuiz();
+        this.res = new resposta(this.resultado);
+        this.navCtrl.setRoot(Resposta);
         break;
     }
     this.score++;
@@ -114,7 +187,7 @@ export class HomePage {
 
   restartQuiz() {
     this.score = 0;
-    this.slides.slideTo(1, 1000);
+    //this.slides.slideTo(1, 1000);
   }
 
   loadMap() {
